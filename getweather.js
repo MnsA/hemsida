@@ -3,8 +3,25 @@ function withWeatherData(f) {
 	r.done(f);
 }
 
-$.ready(function() {
-	withWeatherData(function(data) {
-		console.log(data);
+function displayWeather() {
+	var wt = $('#weathertext');
+	withWeatherData(function(wd) {
+		console.log(wd);
+		wt.text(wd.main.temp);
 	});
+}
+
+function setupWeatherText() {
+	var elem = $('#weathertext');
+	
+	var dh = $(document).height();
+	var h = elem.height();
+	
+	elem.css('text-align', 'center')
+	elem.css('margin-top', (dh / 2) - h);
+}
+
+$(document).ready(function() {
+	setupWeatherText();
+	displayWeather();
 });
