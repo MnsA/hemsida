@@ -3,6 +3,7 @@ body {
 	font-size: 32px;
 	background-color: #4DA4FF;
 	color: white;
+	text-align: center;
 }
 
 a {
@@ -10,14 +11,9 @@ a {
 	color: white;
 }
 
-#weathertext {
-	position: fixed;
-	top: 40%;
-	left: 40%;
-}
-
 /*
 Soligt: #4DA4FF;
 Lite moln: #CADCFF;
 molnigt: #919191;
 Regn: #4C4C4C;
+*/

@@ -6,9 +6,22 @@ function withWeatherData(f) {
 function displayWeather() {
 	var wt = $('#weathertext');
 	withWeatherData(function(wd) {
-		wt.text(wd.weather[0].main);
-		console.log("fuck");
+		console.log(wd);
+		wt.text(wd.main.temp);
 	});
 }
 
-$(document).ready(displayWeather);
+function setupWeatherText() {
+	var elem = $('#weathertext');
+	
+	var dh = $(document).height();
+	var h = elem.height();
+	
+	elem.css('text-align', 'center')
+	elem.css('margin-top', (dh / 2) - h);
+}
+
+$(document).ready(function() {
+	setupWeatherText();
+	displayWeather();
+});
