@@ -3,8 +3,12 @@ function withWeatherData(f) {
 	r.done(f);
 }
 
-$.ready(function() {
-	withWeatherData(function(data) {
-		console.log(data);
+function displayWeather() {
+	var wt = $('#weathertext');
+	withWeatherData(function(wd) {
+		wt.text(wd.weather[0].main);
+		console.log("fuck");
 	});
-});
+}
+
+$(document).ready(displayWeather);
