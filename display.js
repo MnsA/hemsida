@@ -21,10 +21,11 @@ function setupText(wInfo) {
 	textElem.css('margin-top', (pageH / 2) - (textH / 2) + 'px');
 
 	var text = '';
-
-	text += getWord(wInfo.temper, temperWords);
+	text += getWord(wInfo.temperature, temperWords);
 
 	textElem.text(text);
+
+	console.log(wInfo);
 }
 
 function getWord(value, words) {
@@ -40,7 +41,7 @@ var temperWords = [
 	[-20, 'väldigt kallt'],
 	[-10, 'kallt'],
 	[0, 'ganska kallt'],
-	[10, 'inte så varmt'],
-	[20, 'varmt'],
+	[10, 'lagom varmt'],
+	[20, 'ganska varmt'],
 	[30, 'jättevarmt']
 ]

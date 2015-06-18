@@ -1,5 +1,3 @@
-// TODO: use another weather api (smhi?)
-
 function loadWeatherData(callback) {
 	var url = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/{1}/lon/{2}/data.json';
 	var lat = 63.8, lon = 20.3;
@@ -9,8 +7,6 @@ function loadWeatherData(callback) {
 
 function getWeatherInfo(wData) {
 	var wInfo = {};
-
-	console.log(wData);
 
 	// celsius
 	wInfo.temperature = wData.t;
