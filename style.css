@@ -1,16 +1,23 @@
 body {
 	font-family: Arial;
-	background-color: white;
-	color: black;
+	font-size: 32px;
+	background-color: #4DA4FF;
+	color: white;
 }
 
 a {
 	text-decoration: underline;
-	color: inherit;
+	color: white;
 }
 
 #weathertext {
 	position: fixed;
-	top: 50%;
-	left: 50%;
+	top: 40%;
+	left: 40%;
 }
+
+/*
+Soligt: #4DA4FF;
+Lite moln: #CADCFF;
+molnigt: #919191;
+Regn: #4C4C4C;
