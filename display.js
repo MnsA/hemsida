@@ -44,4 +44,4 @@ var temperWords = [
 	[10, 'lagom varmt'],
 	[20, 'ganska varmt'],
 	[30, 'jättevarmt']
-]
+];
