@@ -4,24 +4,20 @@ function withWeatherData(f) {
 }
 
 function displayWeather() {
-	var wt = $('#weathertext');
+	var textElem = $('#weatherText');
 	withWeatherData(function(wd) {
-		console.log(wd);
-		wt.text(wd.main.temp);
+		textElem.text(wd.main.temp);
+		
+		pageCenterText(textElem);
 	});
 }
 
-function setupWeatherText() {
-	var elem = $('#weathertext');
-	
-	var dh = $(document).height();
-	var h = elem.height();
+function pageCenterText(elem) {
+	var pageH = $(document).height();
+	var elemH = elem.height();
 	
 	elem.css('text-align', 'center')
-	elem.css('margin-top', (dh / 2) - h);
+	elem.css('margin-top', (pageH / 2) - (elemH / 2) + 'px');
 }
 
-$(document).ready(function() {
-	setupWeatherText();
-	displayWeather();
-});
+$(document).ready(displayWeather);

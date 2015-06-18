@@ -1,14 +1,11 @@
 body {
-	font-family: Arial;
-	font-size: 32px;
 	background-color: #4DA4FF;
-	color: white;
-	text-align: center;
 }
 
-a {
-	text-decoration: underline;
+#weatherText {
 	color: white;
+	font-family: Arial;
+	font-size: 32px;
 }
 
 /*
