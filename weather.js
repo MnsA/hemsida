@@ -6,10 +6,19 @@ function withWeatherData(f) {
 function displayWeather() {
 	var textElem = $('#weatherText');
 	withWeatherData(function(wd) {
-		textElem.text(wd.main.temp);
+		textElem.text('test');
 		
+		setPageGradient('#FF0000');
 		pageCenterText(textElem);
 	});
+}
+
+function setPageGradient(target) {
+	var t = setInterval(function() {
+		var color = $(document.body).css('background-color');
+		var newColor
+		$(document.body).css('background-color' , '#FF0000');
+	}
 }
 
 function pageCenterText(elem) {
