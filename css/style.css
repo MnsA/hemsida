@@ -4,19 +4,13 @@ body {
 	color: black;
 }
 
-h1 {
-	text-align: center;
-}
-
 a {
 	text-decoration: underline;
 	color: inherit;
 }
 
-.navigation {
-	list-style-type: '|';
-}
-
-.navigation li {
-	display: inline;
+#weathertext {
+	position: fixed;
+	top: 50%;
+	left: 50%;
 }
