@@ -6,6 +6,3 @@ vädret i umeå
 
 * sidans bakgrundsfärg anpassar sig till vädret
   - grått för molnigt, ljustblått för soligt osv.
-
-använder OpenWeatherMap
------------------------
