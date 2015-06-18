@@ -1,4 +1,4 @@
-// TODO: use https://developer.yahoo.com/weather/ instead
+// TODO: use another weather api (smhi?)
 
 function loadWeatherData(callback) {
 	var url = 'http://api.openweathermap.org/data/2.5/weather';
