@@ -4,7 +4,6 @@ function displayWeather() {
 	withWeatherInfo(function(wInfo) {
 		setupBody(wInfo);
 		setupText(wInfo);
-		console.log(wInfo);
 	});
 }
 
