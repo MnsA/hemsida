@@ -14,11 +14,9 @@ function displayWeather() {
 }
 
 function setPageGradient(target) {
-	var t = setInterval(function() {
-		var color = $(document.body).css('background-color');
-		var newColor
-		$(document.body).css('background-color' , '#FF0000');
-	}
+	$(document.body).animate({
+		backgroundColor: '#FF0000'
+	}, 100);
 }
 
 function pageCenterText(elem) {
