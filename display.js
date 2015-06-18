@@ -30,7 +30,7 @@ function setupText(wInfo) {
 
 function getWord(value, words) {
 	for(var i = 0; i < words.length - 1; i++) {
-		if(value > words[i][0] && value < words[i + 1][0]) {
+		if(value >= words[i][0] && value < words[i + 1][0]) {
 			return words[i][1];
 		}
 	}
