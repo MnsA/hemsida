@@ -1,10 +1,30 @@
 $(document).ready(displayWeather);
 
 function displayWeather() {
+	var fg = addForeground('lightgray');
 	withWeatherInfo(function(wInfo) {
 		setupBody(wInfo);
 		setupText(wInfo);
+		fg.fadeOut({
+			duration: 500,
+			easing: 'linear'
+		});
 	});
+}
+
+function addForeground(color) {
+	var fg = $('<div id="foreground"></div>');
+	fg.css({
+		backgroundColor: color,
+		pointerEvents: 'none',
+		position: 'fixed',
+		top: 0,
+		left: 0,
+		width: window.innerWidth + 'px',
+		height: window.innerHeight + 'px'
+	});
+	$(document.body).append(fg);
+	return fg;
 }
 
 function setupBody(wInfo) {
