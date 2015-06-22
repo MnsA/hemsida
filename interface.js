@@ -15,8 +15,8 @@ function getWeatherInfo(wData) {
 	// meters / second
 	wInfo.windSpeed = wData.ws;
 
-	// 'eights'
-	wInfo.cloudiness = wData.tcc;
+	// percent
+	wInfo.cloudiness = wData.tcc * (100 / 8);
 
 	// mm / hour
 	wInfo.rainAmount = wData.pit;

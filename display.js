@@ -1,4 +1,5 @@
 $(document).ready(displayWeather);
+$(window).resize(centerText);
 
 function displayWeather() {
 	var fg = addForeground('lightgray');
@@ -32,21 +33,24 @@ function setupBody(wInfo) {
 	$(document.body).css('background-color', 'blue');
 }
 
-function setupText(wInfo) {
+function centerText() {
 	var textElem = $('#weatherText');
 
-	// center the text
 	var pageH = $(document).height();
 	var textH = textElem.height();
 	textElem.css('text-align', 'center')
 	textElem.css('margin-top', (pageH / 2) - (textH / 2) + 'px');
+}
+
+function setupText(wInfo) {
+	var textElem = $('#weatherText');
 
 	var text = '';
 	text += getWord(wInfo.temperature, temperWords);
 
 	textElem.text(text);
 
-	console.log(wInfo);
+	centerText();
 }
 
 function getWord(value, words) {
