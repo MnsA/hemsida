@@ -25,6 +25,7 @@ TextCube.prototype.nearestText = function(pos) {
 	var bestDist = Number.POSITIVE_INFINITY;
 	for(var i = 0; i < this.points.length; i++) {
 		var dist = this.distance(pos, this.points[i].pos);
+		console.log(dist, " to ", this.points[i].text);
 		if(dist < bestDist) {
 			bestDist = dist;
 			bestPoint = this.points[i];
