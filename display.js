@@ -60,9 +60,11 @@ function setupText(wInfo) {
 
 	var text = '';
 	
-	text += getWord(wInfo.temperature, temperWords);
-	text += ' och ';
-	text += getWord(wInfo.windSpeed, windWords);
+	text += textCube.nearestText([wInfo.temperature, wInfo.windSpeed]);
+	
+	//text += getWord(wInfo.temperature, temperWords);
+	//text += ' och ';
+	//text += getWord(wInfo.windSpeed, windWords);
 
 	textElem.text(text);
 
@@ -102,3 +104,11 @@ var cloudColors = [
 	[50, '#919191'],
 	[80, '#4C4C4C']
 ];
+
+
+var textCube = new TextCube([100, 50]);
+// first is temp, second is wind
+textCube.addPoints([
+	[0, 10], "kallt och blåsigt",
+	[20, 5], "varmt och stilla"
+]);
