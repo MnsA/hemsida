@@ -4,13 +4,13 @@ $(window).resize(centerText);
 function displayWeather() {
 	var fg = addForeground('lightgray');
 	withWeatherInfo(function(wInfo) {
+		console.log('current data: ', wInfo);
 		setupBody(wInfo);
 		setupText(wInfo);
 		fg.fadeOut({
 			duration: 500,
 			easing: 'linear'
 		});
-		console.log(wInfo);
 	});
 }
 
