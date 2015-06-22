@@ -41,7 +41,7 @@ function findCorrectWeather(timeseries) {
 	var now = new Date();
 	for(var i = 0; i < timeseries.length; i++) {
 		var t = new Date(timeseries[i].validTime);
-		if(t.getHours() == now.getHours()) {
+		if(t.getDate() == now.getDate()) {
 			return timeseries[i];
 		}
 	}
