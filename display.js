@@ -74,10 +74,19 @@ function getWord(value, words) {
 }
 
 var temperWords = [
+	[-300, 'Norrlänsk Vinter'],
 	[-20, 'väldigt kallt'],
 	[-10, 'kallt'],
 	[0, 'ganska kallt'],
-	[10, 'lagom varmt'],
+	[10, 'lagomt varmt'],
 	[20, 'ganska varmt'],
 	[30, 'jättevarmt']
+];
+var windWords = [
+	[0, 'Ingen vind'],
+	[5, 'lite blåsigt'],
+	[10, 'ganska blåsigt'],
+	[20, 'blåsigt']
+	[30, 'Orkan!'],
+	[50, 'TORNADO!']
 ];
