@@ -105,15 +105,17 @@ var cloudColors = [
 	[80, '#4C4C4C']
 ];
 
-var textCube = new TextCube([60, 10, 100, 50]);
+var textCube = new TextCube([40, 10, 100, 50]);
 // temp, wind, clouds, rain
 textCube.addPoints([
-	[0, 10, 0, 0], "Kallt och blåsigt.",
+	[0, 10, 60, 0], "Kallt och blåsigt.",
 	[20, 5, 0, 0], "Varmt och stilla.",
-	[10, 10, 0, 20], "Regnigt och hemskt.",
+	[10, 10, 100, 20], "Regnigt och hemskt.",
 	[20, 0, 0, 0], "Mycket fint väder.",
-	[30, 3, 0, 0], "Gå ut!",
-	[-10, 0, 0, 5], "Snö och sånt.",
+	[30, 1, 0, 0], "Gå ut!",
+	[-10, 0, 100, 5], "Snö och sånt.",
 	[-20, 10, 0, 0], "Iskallt och blåsigt.",
-	[-30, 3, 0, 0], "Heyst och Heyst",
+	[-30, 3, 0, 0], "Stanna inomhus om du inte är en norrlänning.",
+	[20, 10, 40, 0], "Varmt och blåsigt.",
+	[10, 1, 60, 0], "Ganska fint väder"
 ]);
