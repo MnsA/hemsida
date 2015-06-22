@@ -35,11 +35,29 @@ function setupBody(wInfo) {
 
 function centerText() {
 	var textElem = $('#weatherText');
+	
+	textElem.css({
+		textAlign: 'center',
+		position: 'absolute',
+		width: 'auto',
+		height: 'auto'
+	});
+	
+	setTimeout(centerText2, 1);
+}
 
-	var pageH = $(document).height();
+function centerText2() {
+	var textElem = $('#weatherText');
+	
+	
+	var pageH = $(window).height();
+	var pageW = $(window).width();
+	
 	var textH = textElem.height();
-	textElem.css('text-align', 'center')
-	textElem.css('margin-top', (pageH / 2) - (textH / 2) + 'px');
+	var textW = textElem.width();
+
+	textElem.css('left', (pageW / 2) - (textW / 2) + 'px');
+	textElem.css('top', (pageH / 2) - (textH / 2) + 'px');
 }
 
 function setupText(wInfo) {
