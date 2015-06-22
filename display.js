@@ -10,6 +10,7 @@ function displayWeather() {
 			duration: 500,
 			easing: 'linear'
 		});
+		console.log(wInfo);
 	});
 }
 
@@ -30,7 +31,8 @@ function addForeground(color) {
 }
 
 function setupBody(wInfo) {
-	$(document.body).css('background-color', 'blue');
+	var bgColor = getWord(wInfo.cloudiness, cloudColors);
+	$(document.body).css('background-color', bgColor);
 }
 
 function centerText() {
@@ -57,7 +59,10 @@ function setupText(wInfo) {
 	var textElem = $('#weatherText');
 
 	var text = '';
+	
 	text += getWord(wInfo.temperature, temperWords);
+	text += ' och ';
+	text += getWord(wInfo.windSpeed, windWords);
 
 	textElem.text(text);
 
@@ -65,6 +70,7 @@ function setupText(wInfo) {
 }
 
 function getWord(value, words) {
+	// not good searching...
 	for(var i = 0; i < words.length - 1; i++) {
 		if(value >= words[i][0] && value < words[i + 1][0]) {
 			return words[i][1];
@@ -89,4 +95,10 @@ var windWords = [
 	[20, 'blåsigt']
 	[30, 'Orkan!'],
 	[50, 'TORNADO!']
+];
+var cloudColors = [
+	[0, '#4DA4FF'],
+	[20, '#CADCFF'],
+	[50, '#919191'],
+	[80, '#4C4C4C']
 ];
