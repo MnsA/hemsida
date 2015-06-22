@@ -43,13 +43,6 @@ function centerText() {
 		height: 'auto'
 	});
 	
-	setTimeout(centerText2, 1);
-}
-
-function centerText2() {
-	var textElem = $('#weatherText');
-	
-	
 	var pageH = $(window).height();
 	var pageW = $(window).width();
 	
