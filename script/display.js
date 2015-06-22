@@ -107,9 +107,14 @@ var cloudColors = [
 
 
 var textCube = new TextCube([60, 10, 50]);
-// temp, wind, rainType, rain
+// temp, wind, rain
 textCube.addPoints([
 	[0, 10, 0], "kallt och blåsigt",
-	[20, 5, 0], "varmt och stilla"
-	[10, 10, 20], "regnigt och hemskt"
+	[20, 5, 0], "varmt och stilla",
+	[10, 10, 20], "regnigt och hemskt",
+	[20, 0, 0], "Mycket fint väder",
+	[30, 3, 0], "Gå ut!",
+	[-10, 0, 5], "Snö och sånt",
+	[-20, 10, 0], "Iskallt och blåsigt",
+	[-30, 3, 0], "Heyst och Heyst",
 ]);
