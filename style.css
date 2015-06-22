@@ -8,6 +8,16 @@ body {
 	font-size: 36px;
 }
 
+#apiLink {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-family: Arial, sans-serif;
+}
+
+#apiLink a {
+	color: #FFFFFF;
+}
 /*
 Soligt: #4DA4FF;
 Lite moln: #CADCFF;
