@@ -6,6 +6,7 @@ function loadWeatherData(callback) {
 	if(true) {
 		callback(weatherResponse);
 	} else {
+		// is cached by default
 		var req = $.getJSON(url.replace('{1}', lat).replace('{2}', lon));
 		req.done(callback);
 	}
