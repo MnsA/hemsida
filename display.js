@@ -21,7 +21,8 @@ function addForeground(color) {
 		top: 0,
 		left: 0,
 		width: window.innerWidth + 'px',
-		height: window.innerHeight + 'px'
+		height: window.innerHeight + 'px',
+		opacity: 1
 	});
 	$(document.body).append(fg);
 	return fg;
