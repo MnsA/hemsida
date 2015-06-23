@@ -54,21 +54,6 @@ function findCorrectWeather(timeseries) {
 		console.log(a.validTime);
 	});
 	return timeseries[0];
-	
-	
-	// unused code //
-	var bestUT = new Date("Jan 1, 1800").valueOf();
-	// needs to be farther from the current date
-	// than any of the weather predictions' timestamps
-	var bestWeather = null;
-	for(var i = 0; i < timeseries.length; i++) {
-		var t = new Date(timeseries[i].validTime).valueOf();
-		if(Math.abs(nowUT - t) < Math.abs(nowUT - bestUT)) {
-			bestUT = t;
-			bestWeather = timeseries[i];
-		}
-	}
-	return bestWeather;
 }
 
 function withWeatherInfo(callback) {
