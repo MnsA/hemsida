@@ -6,7 +6,7 @@ function TextCube(sides) {
 TextCube.prototype.addPoint = function(point, value) {
 	this.points.push({
 		pos: point,
-		text: value
+		value: value
 	});
 }
 
@@ -14,23 +14,23 @@ TextCube.prototype.addPoints = function(ps) {
 	for(var i = 0; i < ps.length; i += 2) {
 		this.points.push({
 			pos: ps[i],
-			text: ps[i + 1]
+			value: ps[i + 1]
 		});
 	}
 }
 
-TextCube.prototype.nearestText = function(pos) {
+TextCube.prototype.nearest = function(pos) {
 	var bestPoint = null;
 	var bestDist = Number.POSITIVE_INFINITY;
 	for(var i = 0; i < this.points.length; i++) {
 		var dist = this.distance(pos, this.points[i].pos);
-		console.log('distance to "' + this.points[i].text + '": ' + dist);
+		console.log('distance to "' + this.points[i].value + '": ' + dist);
 		if(dist < bestDist) {
 			bestDist = dist;
 			bestPoint = this.points[i];
 		}
 	}
-	return bestPoint.text;
+	return bestPoint.value;
 }
 
 TextCube.prototype.distance = function(posA, posB) {

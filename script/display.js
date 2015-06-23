@@ -44,30 +44,15 @@ function centerText() {
 		width: 'auto',
 		height: 'auto'
 	});
-	
-	var pageH = $(window).height();
-	var pageW = $(window).width();
-	
-	var textH = textElem.height();
-	var textW = textElem.width();
 
-	textElem.css('left', (pageW / 2) - (textW / 2) + 'px');
-	textElem.css('top', (pageH / 2) - (textH / 2) + 'px');
+	textElem.css('left', ($(window).width() / 2) - (textElem.width() / 2) + 'px');
+	textElem.css('top', ($(window).height() / 2) - (textElem.height() / 2) + 'px');
 }
 
 function setupText(wInfo) {
 	var textElem = $('#weatherText');
-
-	var text = '';
-	
-	text += textCube.nearestText([wInfo.temperature, wInfo.windSpeed, wInfo.cloudiness, wInfo.rainAmount]);
-	
-	//text += getWord(wInfo.temperature, temperWords);
-	//text += ' och ';
-	//text += getWord(wInfo.windSpeed, windWords);
-
+	var text = textCube.nearest([wInfo.temperature, wInfo.windSpeed, wInfo.cloudiness, wInfo.rainAmount]);
 	textElem.text(text);
-
 	centerText();
 }
 
@@ -81,7 +66,7 @@ function getWord(value, words) {
 	return words[words.length - 1][1];
 }
 
-var temperWords = [
+/*var temperWords = [
 	[-300, 'Norrlänsk Vinter'],
 	[-20, 'väldigt kallt'],
 	[-10, 'kallt'],
@@ -97,7 +82,8 @@ var windWords = [
 	[20, 'blåsigt']
 	[30, 'Orkan!'],
 	[50, 'TORNADO!']
-];
+];*/
+
 var cloudColors = [
 	[0, '#4DA4FF'],
 	[20, '#CADCFF'],

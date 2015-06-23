@@ -40,14 +40,35 @@ function rainTypeString(type) {
 }
 
 function findCorrectWeather(timeseries) {
-	var now = new Date();
+	var nowUT = Date.now();
+
+	// sorts in place
+	timeseries.sort(function(a, b) {
+		var at = Date.parse(a.validTime).valueOf();
+		var bt = Date.parse(b.validTime).valueOf();
+		// <0 becomes [a, b]
+		// >0 becomes [b, a]
+		return Math.abs(nowUT - at) - Math.abs(nowUT - bt);
+	});
+	timeseries.forEach(function(a) {
+		console.log(a.validTime);
+	});
+	return timeseries[0];
+	
+	
+	// unused code //
+	var bestUT = new Date("Jan 1, 1800").valueOf();
+	// needs to be farther from the current date
+	// than any of the weather predictions' timestamps
+	var bestWeather = null;
 	for(var i = 0; i < timeseries.length; i++) {
-		var t = new Date(timeseries[i].validTime);
-		if(t.getDate() == now.getDate()) {
-			return timeseries[i];
+		var t = new Date(timeseries[i].validTime).valueOf();
+		if(Math.abs(nowUT - t) < Math.abs(nowUT - bestUT)) {
+			bestUT = t;
+			bestWeather = timeseries[i];
 		}
 	}
-	return null;
+	return bestWeather;
 }
 
 function withWeatherInfo(callback) {
