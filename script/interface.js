@@ -3,7 +3,7 @@ function loadWeatherData(callback) {
 	var lat = 63.8, lon = 20.3;
 	
 	// if testing
-	if(true) {
+	if(false) {
 		callback(weatherResponse);
 	} else {
 		// is cached by default
