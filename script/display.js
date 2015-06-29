@@ -103,5 +103,5 @@ textCube.addPoints([
 	[-20, 10, 0, 0], "Iskallt och blåsigt.",
 	[-30, 3, 0, 0], "Stanna inomhus om du inte är en norrlänning.",
 	[20, 10, 40, 0], "Varmt och blåsigt.",
-	[10, 1, 60, 0], "Ganska fint väder"
+	[10, 1, 60, 0], "Ganska fint väder."
 ]);

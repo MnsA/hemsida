@@ -20,17 +20,17 @@ TextCube.prototype.addPoints = function(ps) {
 }
 
 TextCube.prototype.nearest = function(pos) {
-	var bestPoint = null;
-	var bestDist = Number.POSITIVE_INFINITY;
+	var tc = this;
+	this.points.sort(function(a, b) {
+		// sort for smallest value
+		return tc.distance(pos, a.pos) - tc.distance(pos, b.pos);
+	});
+	
 	for(var i = 0; i < this.points.length; i++) {
-		var dist = this.distance(pos, this.points[i].pos);
-		console.log('distance to "' + this.points[i].value + '": ' + dist);
-		if(dist < bestDist) {
-			bestDist = dist;
-			bestPoint = this.points[i];
-		}
+		console.log("dist to " + this.points[i].value + ": " + tc.distance(pos, this.points[i].pos));
 	}
-	return bestPoint.value;
+
+	return this.points[0].value;
 }
 
 TextCube.prototype.distance = function(posA, posB) {
