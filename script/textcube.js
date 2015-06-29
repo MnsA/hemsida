@@ -27,7 +27,7 @@ TextCube.prototype.nearest = function(pos) {
 	});
 	
 	for(var i = 0; i < this.points.length; i++) {
-		console.log("dist to " + this.points[i].value + ": " + tc.distance(pos, this.points[i].pos));
+		console.log('dist to ' + this.points[i].value + ': ' + tc.distance(pos, this.points[i].pos));
 	}
 
 	return this.points[0].value;

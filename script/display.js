@@ -31,7 +31,7 @@ function addForeground(color) {
 }
 
 function setupBody(wInfo) {
-	var bgColor = getWord(wInfo.cloudiness, cloudColors);
+	var bgColor = getColor(wInfo.cloudiness);
 	$(document.body).css('background-color', bgColor);
 }
 
@@ -56,40 +56,21 @@ function setupText(wInfo) {
 	centerText();
 }
 
-function getWord(value, words) {
-	// not good searching...
-	for(var i = 0; i < words.length - 1; i++) {
-		if(value >= words[i][0] && value < words[i + 1][0]) {
-			return words[i][1];
-		}
-	}
-	return words[words.length - 1][1];
-}
-
-/*var temperWords = [
-	[-300, 'Norrlänsk Vinter'],
-	[-20, 'väldigt kallt'],
-	[-10, 'kallt'],
-	[0, 'ganska kallt'],
-	[10, 'lagomt varmt'],
-	[20, 'ganska varmt'],
-	[30, 'jättevarmt']
-];
-var windWords = [
-	[0, 'Ingen vind'],
-	[5, 'lite blåsigt'],
-	[10, 'ganska blåsigt'],
-	[20, 'blåsigt']
-	[30, 'Orkan!'],
-	[50, 'TORNADO!']
-];*/
-
-var cloudColors = [
+function getColor(value) {
+	var colors = [
 	[0, '#4DA4FF'],
 	[20, '#CADCFF'],
 	[50, '#919191'],
 	[80, '#4C4C4C']
 ];
+	// not good searching...
+	for(var i = 0; i < colors.length - 1; i++) {
+		if(value >= colors[i][0] && value < colors[i + 1][0]) {
+			return colors[i][1];
+		}
+	}
+	return colors[colors.length - 1][1];
+}
 
 var textCube = new TextCube([40, 10, 100, 50]);
 // temp, wind, clouds, rain

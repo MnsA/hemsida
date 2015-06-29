@@ -50,9 +50,9 @@ function findCorrectWeather(timeseries) {
 		// >0 becomes [b, a]
 		return Math.abs(nowUT - at) - Math.abs(nowUT - bt);
 	});
-	timeseries.forEach(function(a) {
-		console.log(a.validTime);
-	});
+	
+	
+	console.log('using weather for ' + timeseries[0].validTime);
 	return timeseries[0];
 }
 
