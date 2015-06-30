@@ -73,5 +73,4 @@ function getColor(value) {
 }
 
 var textCube = new TextCube([40, 10, 100, 50]);
-// temp, wind, clouds, rain
 textCube.addPoints(weatherTextList);

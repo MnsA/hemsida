@@ -1,4 +1,5 @@
 weatherTextList = [
+	// temp, wind, clouds, rain
 	[0, 10, 60, 0], "Kallt och blåsigt.",
 	[20, 5, 0, 0], "Varmt och stilla.",
 	[10, 10, 100, 20], "Regnigt och hemskt.",
@@ -12,4 +13,5 @@ weatherTextList = [
 	[10, 1, 100, 3], "Lite regnigt.",
 	[20, 1, 80, 4], "Varmt och lite regnigt.",
 	[15, 3, 60, 0], "Ganska varmt.",
+	[15.4, 2.3, 79.16666666666667, 0], "Grått och tråkigt.",
 ];
