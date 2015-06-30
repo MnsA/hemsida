@@ -44,13 +44,12 @@ function findCorrectWeather(timeseries) {
 
 	// sorts in place
 	timeseries.sort(function(a, b) {
-		var at = Date.parse(a.validTime).valueOf();
-		var bt = Date.parse(b.validTime).valueOf();
+		var at = Date.parse(a.validTime);
+		var bt = Date.parse(b.validTime);
 		// <0 becomes [a, b]
 		// >0 becomes [b, a]
 		return Math.abs(nowUT - at) - Math.abs(nowUT - bt);
 	});
-	
 	
 	console.log('using weather for ' + timeseries[0].validTime);
 	return timeseries[0];
