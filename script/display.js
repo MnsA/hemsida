@@ -88,4 +88,5 @@ textCube.addPoints([
 	[10, 1, 100, 3], "Lite regnigt.",
 	[20, 1, 80, 4], "Varmt och lite regnigt.",
 	[15, 3, 60, 0], "Ganska varmt.",
+	[15.4, 2.3, 79.16666666666667, 0], "Grått och tråkigt.",
 ]);
