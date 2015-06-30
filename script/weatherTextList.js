@@ -5,7 +5,7 @@ weatherTextList = [
 	[10, 10, 100, 20], "Regnigt och hemskt.",
 	[20, 1, 15, 0], "Mycket fint väder.",
 	[30, 1, 0, 0], "Gå ut!",
-	[-10, 0, 100, 5], "Snö och sånt.",
+	[-5, 0, 100, 5], "Snö och sånt.",
 	[-20, 10, 0, 0], "Iskallt och blåsigt.",
 	[-30, 3, 0, 0], "Stanna inomhus om du inte är en norrlänning.",
 	[20, 10, 40, 0], "Varmt och blåsigt.",
@@ -14,4 +14,5 @@ weatherTextList = [
 	[20, 1, 80, 4], "Varmt och lite regnigt.",
 	[15, 3, 60, 0], "Ganska varmt.",
 	[15.4, 2.3, 79.16666666666667, 0], "Grått och tråkigt.",
+	[18.5, 2.5, 33.333333333333336, 0], "Varmt men blåsigt.",
 ];
