@@ -1,6 +1,9 @@
+var DEBUGGING = false;
+
 function loadWeatherData(callback) {
 	var url = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/{1}/lon/{2}/data.json';
 	var lat = 63.8, lon = 20.3;
+
 
 	$.ajaxSetup({cache: true});
 	var req = $.getJSON(url.replace('{1}', lat).replace('{2}', lon));
@@ -51,8 +54,7 @@ function findCorrectWeather(timeseries) {
 }
 
 function withWeatherInfo(callback) {
-	// if debugging
-	if(true) {
+	if(DEBUGGING) {
 		callback(getUserData());
 	} else {
 		loadWeatherData(function(resp) {
