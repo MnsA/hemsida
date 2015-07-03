@@ -72,3 +72,17 @@ function getUserData() {
 	wInfo.rainType = 3; // rain
 	return wInfo;
 }
+
+function hasUrlParameter(name) {
+	var paramStr = window.location.search.substring(1);
+	var params = paramStr.split('&');
+	
+	for(var i = 0; i < params.length; i++) {
+		var t = params[i].split('=');
+		if(t[0] == name) {
+			return true;
+		}
+	}
+	
+	return false;
+}
