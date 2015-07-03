@@ -1,15 +1,9 @@
 function loadWeatherData(callback) {
 	var url = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/{1}/lon/{2}/data.json';
 	var lat = 63.8, lon = 20.3;
-	
-	// if testing
-	if(false) {
-		callback(weatherResponse);
-	} else {
-		// is cached by default
-		var req = $.getJSON(url.replace('{1}', lat).replace('{2}', lon));
-		req.done(callback);
-	}
+	// is cached by default
+	var req = $.getJSON(url.replace('{1}', lat).replace('{2}', lon));
+	req.done(callback);
 }
 
 function getWeatherInfo(wData) {
@@ -56,8 +50,24 @@ function findCorrectWeather(timeseries) {
 }
 
 function withWeatherInfo(callback) {
-	loadWeatherData(function(resp) {
-		var wData = findCorrectWeather(resp.timeseries);
-		callback(getWeatherInfo(wData));
-	});
+	// if debugging
+	if(true) {
+		callback(getUserData());
+	} else {
+		loadWeatherData(function(resp) {
+			var wData = findCorrectWeather(resp.timeseries);
+			callback(getWeatherInfo(wData));
+		});
+	}
+}
+
+function getUserData() {
+	// gets weather data from user, for debuging
+	var wInfo = {};
+	wInfo.temperature = window.prompt('temperatur (°C): ');
+	wInfo.windSpeed = window.prompt('vindhastighet (m/s):');
+	wInfo.cloudiness =  window.prompt('molnighet (%):');
+	wInfo.rainAmount = window.prompt('hur mycket regn (mm/h):');
+	wInfo.rainType = 3; // rain
+	return wInfo;
 }
